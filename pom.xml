@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.lancefallon</groupId>
-    <artifactId>websocket-demo</artifactId>
-    <version>0.0.2</version>
+    <artifactId>spring-vue-demo</artifactId>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>websocket-demo</name>
-    <description>Websocket Demo</description>
+    <name>spring-vue-demo</name>
+    <description>Spring Vue Demo</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -53,15 +53,6 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-messaging</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity4</artifactId>
@@ -112,8 +103,8 @@
                     <dockerHost>${docker.host}</dockerHost>
 
                     <authConfig>
-                        <username>lfallo1</username>
-                        <password>Snoopy08</password>
+                        <username>username</username>
+                        <password>password</password>
                     </authConfig>
 
                     <verbose>true</verbose>
