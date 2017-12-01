@@ -1,0 +1,1 @@
+export const ROOTSTORE_SET_AUTH = 'setAuth';

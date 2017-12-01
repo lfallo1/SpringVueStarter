@@ -1,0 +1,22 @@
+#main-content{
+    padding-bottom: 100px !important;
+}
+
+.clickable:hover{
+    cursor: pointer;
+    color: rgb(1,165,238);
+}
+
+#direct-chat-windows{
+    width: 300px;
+    margin-top: 25px;
+    position: absolute;
+    right: 10px;
+    padding-bottom: 65px;
+}
+
+.material-icons.with-text{
+    display: inline-flex;
+    vertical-align: middle;
+    margin-top: -2px;
+}
