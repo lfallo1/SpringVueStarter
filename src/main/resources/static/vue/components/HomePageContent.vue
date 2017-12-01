@@ -9,10 +9,14 @@
 <script>
 
     import HomePageSubContent from './HomePageSubContent.vue';
-    import {mapState, mapGetters} from 'vuex';
+    import {mapState, mapGetters, mapActions} from 'vuex';
 
     export default {
-
+        methods: {
+            ...mapActions({
+                setCsrf: 'setCsrf'
+            })
+        },
         components: {
             'app-homepage-subcontent': HomePageSubContent
         },
@@ -24,6 +28,9 @@
                 userInfo: 'home/userInfo',
                 welcomeMessage: 'home/welcomeMessage'
             })
+        },
+        created() {
+            this.setCsrf();
         }
     }
 </script>

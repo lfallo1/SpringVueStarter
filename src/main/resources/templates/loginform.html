@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"></head>
+
+<body>
+<div id="app">
+
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <a th:href="@{/}" href="/"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <app-loginform></app-loginform>
+    </div>
+    <app-footer></app-footer>
+</div>
+<div th:replace="fragments/scripts :: scripts"></div>
+</body>

@@ -28,14 +28,15 @@
                 <div :class="{'collapse' : !navExpanded}" class="navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="" @click.prevent.stop="" v-else>Not signed in</a>
+                            <a href="" @click.prevent.stop="">Not signed in</a>
                         </li>
                         <li class="dropdown" :class="{'open' : navbarDropdownIsOpen}">
                             <a @click.prevent.stop="navbarDropdownIsOpen = !navbarDropdownIsOpen" href=""
                                class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                :aria-expanded="navExpanded">Account <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/login"><i class="material-icons with-text md-18">perm_identity</i>Signin</a></li>
+                                <li><a href="/login"><i
+                                        class="material-icons with-text md-18">perm_identity</i>Signin</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -1,29 +1,25 @@
-import Vue from "vue";
-import {
-    HOME_INITIALIZE
-} from './mutation-types.js';
-import axios from 'axios';
+import {HOME_INITIALIZE} from './mutation-types.js';
 
 export default {
     namespaced: true,
     state: {
-        user : null
+        user: null
     },
     getters: {
         userInfo(state) {
-            return `${state.user.userName} is ${state.user.age} years old, and is from ${state.user.location}`;
+            return state.user ? `${state.user.userName} is ${state.user.age} years old, and is from ${state.user.location}` : 'No info available';
         },
-        welcomeMessage(state){
+        welcomeMessage(state) {
             return state.user ? `Welcome to the site, ${state.user.userName}` : 'Hello, guest';
         }
     },
     mutations: {
-        [HOME_INITIALIZE](state, user){
-            state.user = payload;
+        [HOME_INITIALIZE](state, user) {
+            state.user = user;
         }
     },
     actions: {
-        initialize({commit}, payload){
+        initialize({commit}, payload) {
             commit(HOME_INITIALIZE, payload);
         },
     }
