@@ -33,38 +33,27 @@
 <script>
 
     import axios from 'axios';
-    import config from '../config';
+    import {mapActions, mapState} from 'vuex';
 
     export default {
         data() {
             return {
                 form: {"username": "", "password": ""},
-                csrf: "",
-                error: false
             }
         },
         methods: {
             submit() {
-                this.error = false;
-                const data = 'username=' + this.form.username + '&password=' + this.form.password + "&token=" + this.csrf;
-                axios({
-                    url: '/login',
-                    method: 'POST',
-                    data: data
-                }).then(res => {
-                    window.location.href = "/";
-                }).catch(err => {
-                    console.log(err);
-                    if (err && err.response && err.response.data && err.response.data.message && err.response.data.message.toLowerCase().indexOf('maximum sessions') > -1) {
-                        this.error = "Maximum sessions for this login exceeded";
-                        return;
-                    }
-                    this.error = "Invalid username / password";
-                })
-            }
+                const formData = 'username=' + this.form.username + '&password=' + this.form.password;
+                this.login(formData);
+            },
+            ...mapActions({
+                login: 'auth/login'
+            })
         },
-        created() {
-            this.csrf = config.getCsrfHeader();
+        computed: {
+            ...mapState({
+                error: state => state.auth.loginError
+            })
         }
     }
 </script>

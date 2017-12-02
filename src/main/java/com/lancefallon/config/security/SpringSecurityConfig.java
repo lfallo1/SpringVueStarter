@@ -58,8 +58,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
 //		// @formatter:off
         http
-                .authorizeRequests().antMatchers("/dist/**", "/bower/**", "/images/**", "/**/favicon.ico").permitAll() //vue
-                .and().authorizeRequests().antMatchers("/", "/invalidSession", "/api/config/**", "/api/channel/**").permitAll() //routes
+                .csrf().disable().authorizeRequests().antMatchers("/dist/**", "/bower/**", "/images/**", "/**/favicon.ico").permitAll() //vue
+                .and().authorizeRequests().antMatchers("/", "/api/config/**", "/api/channel/**").permitAll() //routes
                 .and().formLogin()
                 .loginPage("/login").defaultSuccessUrl("/").permitAll() //login
                 .and().authorizeRequests().anyRequest().authenticated() //require auth for other requests
