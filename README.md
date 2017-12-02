@@ -1,4 +1,4 @@
-#Spring Boot / Thymeleaf with Vuejs
+#Spring Boot / Vuejs
 ## examples include the following:
 #### restcontroller and regular controllers
 #### basic spring security with login/logout handlers, role specific functionality, custom security annotations
